@@ -1,4 +1,5 @@
 let timer = 0;
+let score = 0;
 
 function setup() {
     createCanvas(400, 400);
@@ -13,26 +14,38 @@ function setup() {
     }
     this.f = new fruit();
     this.snake = new snake();
-    this.snake.addBodyPart();
     // this.snake.addBodyPart(1);
     // 0 = UP, 1 = DOWN, 2 = LEFT, 3 = RIGHT
     this.dir = 0;
 }
 
 function draw() {
+    if (this.snake.head === this.snake.tail) {
+        // Temporary positions kept only when snake is of size == 1 in order to insert second bodypart in correct position   
+        var tmpX = this.snake.head.x;
+        var tmpY = this.snake.head.y;
+    }
+
+
+    // Check which direction is blocked
+    var blockedDir = this.snake.getBlockedDirection();
+
     // Read command
-    if (keyIsDown(UP_ARROW)) {
+    if (keyIsDown(UP_ARROW) && blockedDir != 0) {
         this.dir = 0;
-    } else if (keyIsDown(DOWN_ARROW)) {
+    } else if (keyIsDown(DOWN_ARROW) && blockedDir != 1) {
         this.dir = 1;
-    } else if (keyIsDown(LEFT_ARROW)) {
+    } else if (keyIsDown(LEFT_ARROW) && blockedDir != 2) {
         this.dir = 2;
-    } else if (keyIsDown(RIGHT_ARROW)) {
+    } else if (keyIsDown(RIGHT_ARROW) && blockedDir != 3) {
         this.dir = 3;
     }
 
     // Set background
     background(400);
+
+    // Draw score
+    text('Your score: ' + score, 10, 30);
 
     // Draw grid
     grid.forEach(l => l.draw());
@@ -44,7 +57,7 @@ function draw() {
     this.snake.draw();
 
     // Update player pos
-    if (millis() >= 500 + timer) {
+    if (millis() >= 250 + timer) {
         switch (this.dir) {
             case 0:
                 this.snake.moveVertically(-20);
@@ -63,11 +76,25 @@ function draw() {
         timer = millis();
     }
 
-    // Check for lose
+    // Check collision with fruit
+    if (this.snake.head.x === this.f.x && this.snake.head.y === this.f.y) {
+        this.snake.addBodyPart(tmpX, tmpY, this.f.x, this.f.y);
+        score += 100;
+        var pos = fruit.getValidPos();
+        this.f.x = pos.x;
+        this.f.y = pos.y;
 
-    //if (this.snake.x >= 400 || this.snake.x <= 0 || this.snake.y <= 0 || this.snake.y >= 400) {
-    //  background(400);
-    // }
+    }
 
+    // Check for collision against boundaries
+    if (this.snake.head.x >= 400 || this.snake.head.x <= 0 || this.snake.head.y <= 0 || this.snake.head.y >= 400) {
+        endGame();
+    }
+}
 
+function endGame() {
+    background(400);
+    noLoop();
+    // Draw score one last time
+    text('Well done! Your final score was: ' + score, 200, 200);
 }

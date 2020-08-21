@@ -24,19 +24,41 @@ class snake {
 
     }
 
-    addBodyPart() {
+    addBodyPart(snakeX, snakeY, fruitX, fruitY) {
         if (this.head === this.tail) {
-            // TODO: Static position, CHANGE THIS
-            var newPart = new this.bodypart(this.head.x + 20, this.head.y);
+            var newX;
+            var newY;
+
+            if (fruitX < snakeX) {
+                // Fruit left
+                newY = this.head.y;
+                newX = this.head.x + 20;
+            } else if (fruitX === snakeX) {
+                // Fruit Up or Down
+                if (fruitY > snakeY) {
+                    // Fruit Up
+                    newY = this.head.y - 2;
+                    newX = this.head.x;
+                } else {
+                    // Fruit Down
+                    newY = this.head.y + 20;
+                    newX = this.head.x;
+                }
+            } else {
+                // Fruit right
+                newY = this.head.y;
+                newX = this.head.x - 20;
+            }
+            var newPart = new this.bodypart(newX, newY);
             this.head.next = newPart;
             newPart.previous = this.head;
             newPart.next = null;
             this.tail = newPart;
         } else {
-            var newX,
-                var newY;
+            var newX;
+            var newY;
 
-            var pivot = tail.previous;
+            var pivot = this.tail.previous;
             if (pivot.x < this.tail.x) {
                 // To the left
                 newX = this.tail.x + 20;
@@ -76,22 +98,50 @@ class snake {
     }
 
     moveHorizontally(x) {
-        this.move();
+        this.move(this.head.x + x, this.head.y);
         this.head.x += x;
 
     }
 
     moveVertically(y) {
-        this.move();
+        this.move(this.head.x, this.head.y + y);
         this.head.y += y;
     }
 
-    move() {
-        var current = this.head.next;
-        while (current != null) {
+    move(x, y) {
+        var current = this.tail;
+        // Condition only occurs at the head
+        while (current.previous != null) {
+            // Check if head collides with other bodyparts
+            if (current.x === x && current.y === y) {
+                endGame();
+            }
             current.x = current.previous.x;
             current.y = current.previous.y;
+            current = current.previous;
         }
     }
 
+    getBlockedDirection() {
+        // -1 = none, 0 = up, 1 = down, 2 = left, 3 = right
+        if (this.head === this.tail) return -1;
+
+        if (this.head.next.x < this.head.x) {
+            // Left
+            return 2;
+        } else if (this.head.next.x > this.head.x) {
+            // Right
+            return 3;
+        } else {
+            // Up or Down
+            if (this.head.next.y < this.head.y) {
+                // Up
+                return 0;
+            } else {
+                // Down
+                return 1;
+            }
+        }
+
+    }
 }
