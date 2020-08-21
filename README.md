@@ -1,5 +1,5 @@
-# JavaScriptExercises
-Collection of JavaScript applications ranging from simple exercises to more complex projects with the aim of practicing the JavaScript language and surrounding frameworks, and to gain exposure to physics and game engines.
+# About
+This repository contains a collection of JavaScript applications ranging from simple exercises to more complex projects with the aim of practicing the JavaScript language and surrounding frameworks, and to gain exposure to physics and game engines.
 
 ## Raycasting
 
