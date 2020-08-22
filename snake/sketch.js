@@ -3,8 +3,9 @@ let score = 0;
 
 function setup() {
     createCanvas(400, 400);
-    fill('red');
-    stroke('red')
+    background('rgb(192,192,192)');
+    fill('white');
+    stroke('white')
     this.grid = new Array();
     for (i = 0; i <= 400; i++) {
         if (i % 20 == 0) {
@@ -42,10 +43,14 @@ function draw() {
     }
 
     // Set background
-    background(400);
+    background('rgb(192,192,192)');
 
     // Draw score
+    fill('black');
+    stroke('black');
     text('Your score: ' + score, 10, 30);
+    fill('white');
+    stroke('white');
 
     // Draw grid
     grid.forEach(l => l.draw());
@@ -96,5 +101,6 @@ function endGame() {
     background(400);
     noLoop();
     // Draw score one last time
+    fill('black');
     text('Well done! Your final score was: ' + score, 200, 200);
 }

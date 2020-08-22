@@ -9,8 +9,8 @@ class fruit {
         fill('black');
         stroke('black')
         circle(this.x, this.y, 20);
-        fill('red');
-        stroke('red')
+        fill('white');
+        stroke('white')
     }
 
     static getValidPos() {
