@@ -5,7 +5,7 @@ This repository contains a collection of JavaScript programs ranging from simple
 
 # Setup Instructions
 
-Running the code is super easy. Simply clone/fork the repository and open the index.html from the project of choice in your browser. Alternatively, click on any project below.
+Running the code is super easy. Simply click on the title for any of the projects below.
 
 ## [Raycasting](/raycasting/index.html)
 
