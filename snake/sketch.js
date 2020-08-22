@@ -102,5 +102,6 @@ function endGame() {
     noLoop();
     // Draw score one last time
     fill('black');
+    stroke('black');
     text('Well done! Your final score was: ' + score, 200, 200);
 }
