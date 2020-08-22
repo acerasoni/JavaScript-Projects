@@ -5,7 +5,7 @@ This repository contains a collection of JavaScript applications ranging from si
 
 # Setup Instructions
 
-Running the code is super easy. Simply clone/fork the repository and open the index.html from the project of choice in your browser. Alternatively, visit https://acerasoni.github.io/JavaScript-Projects/ and select the project.
+Running the code is super easy. Simply clone/fork the repository and open the index.html from the project of choice in your browser. Alternatively, select any project below.
 
 ## Raycasting
 
