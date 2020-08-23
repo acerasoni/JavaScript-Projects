@@ -45,13 +45,6 @@ function draw() {
     // Set background
     background('rgb(192,192,192)');
 
-    // Draw score
-    fill('black');
-    stroke('black');
-    text('Your score: ' + score, 10, 30);
-    fill('white');
-    stroke('white');
-
     // Draw grid
     grid.forEach(l => l.draw());
 
@@ -60,6 +53,13 @@ function draw() {
 
     // Draw player
     this.snake.draw();
+
+    // Draw score
+    fill('black');
+    stroke('black');
+    text('Your score: ' + score, 5, 30);
+    fill('white');
+    stroke('white');
 
     // Update player pos
     if (millis() >= 250 + timer) {
