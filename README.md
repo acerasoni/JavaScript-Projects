@@ -1,3 +1,5 @@
+# These projects are compatible only with laptop/PC
+
 # About
 Developed and Maintained by [Andrea Giulio Cerasoni](https://www.linkedin.com/in/andreacerasoni/)
 
