@@ -1,18 +1,26 @@
-var MIN_DISTANCE = 5;
+const MIN_DISTANCE = 5;
+const NUM_VERTICES = 3;
+
+const MAX_WIDTH_HEIGHT = 1000;
+
+var MAX_EDGES = getMaxEdges(NUM_VERTICES);
+var NUM_EDGES = MAX_EDGES;
 
 function setup() {
-    createCanvas(400, 400);
+    createCanvas(MAX_WIDTH_HEIGHT, MAX_WIDTH_HEIGHT);
 
     this.colors = new Set();
     this.vertices = new Array();
     this.edges = new Array();
 
-    addVertex();
-    addVertex();
-    addVertex();
 
-    addEdge();
+    for (var vces = 0; vces < NUM_VERTICES; vces++) {
+        addVertex();
+    }
 
+    for (var eges = 0; eges < NUM_EDGES; eges++) {
+        addEdge();
+    }
     this.vertices.forEach(v => {
         colorVertex(v);
     })
@@ -31,6 +39,11 @@ function draw() {
     this.edges.forEach(e => {
         e.draw();
     });
+
+    fill('black');
+    text('Number of Vertices: ' + this.vertices.length, 5, 30);
+    text('Number of Edges: ' + this.edges.length, 5, 50);
+    text('Number of Colors (minimum): ' + this.colors.size, 5, 70);
 }
 
 function colorVertex(v) {
@@ -83,10 +96,10 @@ function addEdge() {
 }
 
 function addVertex() {
-    var v = new vertex(getRandomInt(10, 390), getRandomInt(10, 390), 20);
+    var v = new vertex(getRandomInt(10, MAX_WIDTH_HEIGHT), getRandomInt(10, MAX_WIDTH_HEIGHT), 20);
 
     while (!isValid(v)) {
-        v = new vertex(getRandomInt(10, 390), getRandomInt(10, 390), 20);
+        v = new vertex(getRandomInt(10, MAX_WIDTH_HEIGHT), getRandomInt(10, MAX_WIDTH_HEIGHT), 20);
     };
 
     this.vertices.push(v);
@@ -138,4 +151,9 @@ function random_rgb() {
 function areColorsEquivalent(c1, c2) {
     if (c1.r === c2.r && c1.g === c2.g && c1.b === c2.b) return true;
     else return false;
+}
+
+function getMaxEdges(vertices) {
+    var n = vertices - 1;
+    return vertices * n / 2;
 }
