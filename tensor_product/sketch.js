@@ -3,8 +3,8 @@ const SCREEN_WIDTH = 1920;
 const SCREEN_HEIGHT = 1080;
 
 // Graph one settings
-const GRAPH_ONE_VERTICES = 8;
-const GRAPH_ONE_EDGES = 3;
+const GRAPH_ONE_VERTICES = 23;
+const GRAPH_ONE_EDGES = 74;
 
 // Graph two settings
 const GRAPH_TWO_VERTICES = 8;

@@ -31,6 +31,7 @@ class tensorProduct {
 
         fill('black');
         text('Number of Vertices: ' + this.vertices.length, this.textX, this.textY);
+        text('Number of Edges: ' + this.edges.length, this.textX, this.textY + 20);
     }
 
     getRandomInt(min, max) {
