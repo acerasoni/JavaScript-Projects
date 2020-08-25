@@ -17,3 +17,11 @@ This exercise was built with the p5.js library and inspired from [The Coding Tra
 ## [Snake](/snake/index.html)
 
 This project emulates the famous snake game, built with the p5.js library.
+
+## [Tensor Product](/tensor_product/index.html)
+
+This project generates two distinct undirected graphs with a pre-determined number of vertices and edges, coloring them with the minimum possible number of colors such that two adjacent edges are not colored the same. The program then computes the [tensor product of the two graphs](https://en.wikipedia.org/wiki/Tensor_product_of_graphs) and displays the output.
+
+You can adjust screen, vertices, and edges settings via sketch.js. Please note that the program will not run if the number of edges exceeds the maximum number of edges possible for the number of vertices entered 
+
+Max edges: n * (n - 1) where n = number of vertices
