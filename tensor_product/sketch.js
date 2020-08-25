@@ -1,13 +1,13 @@
 // Screen settings
-const SCREEN_WIDTH = 1920;
-const SCREEN_HEIGHT = 1080;
+const SCREEN_WIDTH = 1300;
+const SCREEN_HEIGHT = 700;
 
 // Graph one settings
-const GRAPH_ONE_VERTICES = 23;
-const GRAPH_ONE_EDGES = 74;
+const GRAPH_ONE_VERTICES = 5;
+const GRAPH_ONE_EDGES = 3;
 
 // Graph two settings
-const GRAPH_TWO_VERTICES = 8;
+const GRAPH_TWO_VERTICES = 5;
 const GRAPH_TWO_EDGES = 3;
 
 function setup() {
