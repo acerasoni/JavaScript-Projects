@@ -9,6 +9,9 @@ class vertex {
             r: -1,
             b: -1
         }
+
+        // 10-length UID
+        this.uid = uid(10);
     }
 
     setColor(rgbValues) {

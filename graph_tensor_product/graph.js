@@ -1,9 +1,7 @@
-const NUM_EDGES = 5;
-const NUM_VERTICES = 5;
-const MIN_DISTANCE = 15;
+const MIN_DISTANCE = 8;
 
 class graph {
-    constructor(startX, endX, textX, textY) {
+    constructor(numVertices, numEdges, startX, endX, textX, textY) {
         this.startX = startX;
         this.endX = endX;
         this.textX = textX;
@@ -13,11 +11,11 @@ class graph {
         this.vertices = new Array();
         this.edges = new Array();
 
-        for (var vces = 0; vces < NUM_VERTICES; vces++) {
+        for (var vces = 0; vces < numVertices; vces++) {
             this.addVertex();
         }
 
-        for (var eges = 0; eges < NUM_EDGES; eges++) {
+        for (var eges = 0; eges < numEdges; eges++) {
             this.addEdge();
         }
         this.vertices.forEach(v => {
@@ -105,10 +103,10 @@ class graph {
     }
 
     addVertex() {
-        var v = new vertex(this.getRandomInt(this.startX, this.endX), this.getRandomInt(10, SCREEN_WIDTH_HEIGHT - 10), 20);
+        var v = new vertex(this.getRandomInt(this.startX, this.endX), this.getRandomInt(10, SCREEN_HEIGHT - 10), 20);
 
         while (!this.isValid(v)) {
-            v = new vertex(this.getRandomInt(this.startX, this.endX), this.getRandomInt(10, SCREEN_WIDTH_HEIGHT - 10), 20);
+            v = new vertex(this.getRandomInt(this.startX, this.endX), this.getRandomInt(10, SCREEN_HEIGHT - 10), 20);
         };
 
         this.vertices.push(v);
