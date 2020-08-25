@@ -14,14 +14,14 @@ Running the code is super easy. Simply click on the title for any of the project
 
 This exercise was built with the p5.js library and inspired from [The Coding Train's video on raycasting](https://www.youtube.com/watch?v=TOEi6T2mtHo). The objective of this project was to simulate a 2D environment in which a point casts rays onto randomly generated borders around it, known as raycasting or line of sight 2D.
  
-## [Snake](/snake/index.html)
-
-This project emulates the famous snake game, built with the p5.js library.
-
 ## [Tensor Product](/tensor_product/index.html)
 
-This project generates two distinct undirected graphs with a pre-determined number of vertices and edges, coloring them with the minimum possible number of colors such that two adjacent edges are not colored the same. The program then computes the [tensor product of the two graphs](https://en.wikipedia.org/wiki/Tensor_product_of_graphs) and displays the output.
+This project, built with the p5.js library, generates two distinct undirected graphs with a pre-determined number of vertices and edges, coloring them with the minimum possible number of colors such that two adjacent edges are not colored the same. The program then computes the [tensor product of the two graphs](https://en.wikipedia.org/wiki/Tensor_product_of_graphs) and displays the output.
 
 You can adjust screen, vertices, and edges settings via sketch.js. Please note that the program will not run if the number of edges exceeds the maximum number of edges possible for the number of vertices entered 
 
 Max edges: n * (n - 1) where n = number of vertices
+
+## [Snake](/snake/index.html)
+
+This project emulates the famous snake game, built with the p5.js library.
