@@ -22,6 +22,10 @@ You can adjust screen, vertices, and edges settings via sketch.js. Please note t
 
 Max edges: n * (n - 1) where n = number of vertices
 
+## [Game of Life](/game_of_life/index.html)
+
+This is my implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) made with the p5.js library.
+
 ## [Snake](/snake/index.html)
 
 This project emulates the famous snake game, built with the p5.js library.
