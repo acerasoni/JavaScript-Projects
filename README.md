@@ -16,11 +16,15 @@ This exercise was built with the p5.js library and inspired from [The Coding Tra
  
 ## [Tensor Product](/tensor_product/index.html)
 
-This project, built with the p5.js library, generates two distinct undirected graphs with a pre-determined number of vertices and edges, coloring them with the minimum possible number of colors such that two adjacent edges are not colored the same. The program then computes the [tensor product of the two graphs](https://en.wikipedia.org/wiki/Tensor_product_of_graphs) and displays the output.
+This program generates two distinct undirected graphs with a pre-determined number of vertices and edges, coloring them with the minimum possible number of colors such that two adjacent edges are not colored the same. The program then computes the [tensor product of the two graphs](https://en.wikipedia.org/wiki/Tensor_product_of_graphs) and displays the output. A future iteration of this project will try to find an algorithm that can color the tensor product with a number of colors less than the minimum between the first two graphs. This project was built with the p5.js library.
 
 You can adjust screen, vertices, and edges settings via sketch.js. Please note that the program will not run if the number of edges exceeds the maximum number of edges possible for the number of vertices entered 
 
 Max edges: n * (n - 1) where n = number of vertices
+
+## [Game of Life](/game_of_life/index.html)
+
+This is my implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) made with the p5.js library.
 
 ## [Snake](/snake/index.html)
 
