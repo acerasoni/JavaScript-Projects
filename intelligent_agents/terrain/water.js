@@ -1,5 +1,6 @@
 class water extends terrain {
-    constructor() {
-
+    constructor(x, y) {
+        super(x, y, 212, 241, 249);
     }
+
 }

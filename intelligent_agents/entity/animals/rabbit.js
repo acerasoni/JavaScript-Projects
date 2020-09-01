@@ -1,10 +1,13 @@
 class rabbit extends animal {
 
+    static xOffset = +7;
+    static yOffset = -7;
+
+
     constructor(x, y) {
         let texture = 'R';
-        super(x + 7, y - 7, texture);
+        super(x, y, rabbit.xOffset, rabbit.yOffset, texture);
     }
-
 
 
 }

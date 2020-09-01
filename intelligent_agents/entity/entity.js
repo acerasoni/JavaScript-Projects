@@ -1,30 +1,20 @@
 class entity {
-    constructor(x, y, texture) {
+    constructor(x, y, xTextureOffset, yTextureOffset, texture) {
         // Position
         this.x = x;
+
         this.y = y;
+
+        // Texture offset
+        this.xTextureOffset = xTextureOffset;
+        this.yTextureOffset = yTextureOffset;
 
         // Texture
         this.texture = texture;
     }
 
     draw() {
-        text(this.texture, this.x, this.y);
+        text(this.texture, this.x + this.xTextureOffset, this.y + this.yTextureOffset);
     }
 
-    moveUp() {
-        this.y -= 50;
-    }
-
-    moveDown() {
-        this.y += 50;
-    }
-
-    moveLeft() {
-        this.x -= 50;
-    }
-
-    moveRight() {
-        this.x += 50;
-    }
 }
